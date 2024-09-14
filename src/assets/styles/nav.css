@@ -1,0 +1,15 @@
+
+.main-nav {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 2rem;
+    font-weight: 600;
+    background-color: #f9f9f9;
+}
+.main-nav a {
+    border-right: 1px solid #343434;
+    padding: .5rem 1rem;
+}

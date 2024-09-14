@@ -1,0 +1,90 @@
+
+header {
+    background-color: #000;
+    color: #FFFFFF;
+    border-bottom: 2px solid #000;
+}
+header .intro {
+    position: relative;
+    z-index: 2;
+    padding: 1rem 2% 0;
+    height: 350px;
+}
+header,
+header .gradient-overlay,
+header .hero {
+    height: 190px;
+}
+header.main-index,
+header.main-index .gradient-overlay,
+header.main-index .hero {
+    height: 350px;
+    margin-bottom: 37px;
+}
+header .hero {
+    background: url(../images/ocean.jpg) no-repeat;
+    background-position: 50% 20%;
+    background-size: cover;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+/* gradient image overlay */
+header .gradient-overlay {
+    background: rgba(0,0,0,0.29);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.75) 65%, rgba(36,36,36,0.99) 99%, rgba(36,36,36,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,0,0,0.29)), color-stop(65%, rgba(0,0,0,0.75)), color-stop(99%, rgba(36,36,36,0.99)), color-stop(100%, rgba(36,36,36,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.75) 65%, rgba(36,36,36,0.99) 99%, rgba(36,36,36,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.75) 65%, rgba(36,36,36,0.99) 99%, rgba(36,36,36,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.75) 65%, rgba(36,36,36,0.99) 99%, rgba(36,36,36,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.75) 65%, rgba(36,36,36,0.99) 99%, rgba(36,36,36,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#242424', GradientType=1 );
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+header h1,
+header h2 {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+}
+header h1 {
+    font-size: 2rem;
+    line-height: 1;
+    border-bottom: 1px solid #fff;
+    padding-bottom: .5rem;
+}
+header h2 {
+    font-size: 1rem;
+    padding-top: 0.5rem;
+}
+header blockquote {
+    font-size: 1rem;
+    font-family: cursive;
+    font-weight: 100;
+    letter-spacing: 0.12rem;
+    text-shadow: 1px 0px #777;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 3.3rem;
+    padding-bottom: 1.5rem;
+    display: none;
+}
+header.main-index blockquote {
+    display: block;
+}
+
+@media (min-width: var(--breakpoint-lg)) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    header .intro {
+        padding: 3rem 10% 0;
+    }
+    header blockquote {
+        width: 80%;
+    }
+}
