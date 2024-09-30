@@ -1,15 +1,3 @@
-<script>
-import '@/assets/styles/modal.css'
-export default {
-  props: ['slotModalHeading', 'showSlotModal', 'theme'],
-  methods: {
-    closeSlotModal() {
-      this.$emit('closeSlotModal')
-    }
-  }
-}
-</script>
-
 <template>
   <div class="overlay" @click.self="closeSlotModal" :class="{ show: showSlotModal, dark: theme === 'dark', lite:  theme === 'lite' }">
   <div class="modal">
@@ -24,3 +12,15 @@ export default {
   </div>
   </div>
 </template>
+
+<script>
+import '@/assets/styles/modal.css'
+export default {
+    props: ['slotModalHeading', 'showSlotModal', 'theme'],
+    methods: {
+        closeSlotModal() {
+            this.$emit('closeSlotModal')
+        }
+    }
+}
+</script>

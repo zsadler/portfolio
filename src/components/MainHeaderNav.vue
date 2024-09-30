@@ -1,17 +1,40 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-</script>
-
 <template>
-  <nav class="main-nav">
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink :to="{ name: 'about' } ">About</RouterLink>
-    <RouterLink :to="{ name: 'components' }">Components Portfolio</RouterLink>
-  </nav>
+    <nav class="main-nav">
+        <router-link v-for="slug in rootLevelSlugs" :key="slug.name" :to="slug.path">{{ slug.navName }}</router-link>
+    </nav>
 </template>
 
-<style scoped>
+<script>
+import { RouterLink } from 'vue-router'
+import ROUTES_CONFIG from '@/data/routesConfig.json'
+
+export default {
+    name: 'MainHeaderNav',
+    components: { RouterLink },
+    data() {
+        return {
+            slugs: ROUTES_CONFIG.routes
+        }
+    },
+    computed: {
+        rootLevelSlugs() {
+            return this.slugs.filter(slug => slug.root === 'home')
+        }
+    }
+}
+</script>
+
+<style lang="scss">
 nav a {
-  cursor: pointer;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    .active {
+        font-weight: bold;
+        background-color: #000;
+    }
 }
 </style>

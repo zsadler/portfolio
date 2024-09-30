@@ -1,17 +1,37 @@
-<script setup>
-
-</script>
-
 <template>
-  <h1>Components</h1>
-  <p>Here are some components:</p>
-  <ul>
-    <li><RouterLink :to="{ name: 'forms' }">Forms</RouterLink></li>
-    <li><RouterLink :to="{ name: 'modals' }">Modals</RouterLink></li>
-    <li>Slider</li>
-    <li>Weather</li>
-  </ul>
+    <h2>Components</h2>
+    <h3>Working Examples</h3>
+    <ul>
+        <li v-for="slug in componentLevelSlugs" :key="slug.name">
+            <router-link :to="slug.path">{{ slug.navName }}</router-link>
+        </li>
+    </ul>
+    <h3>Coming Soon!</h3>
+    <ul>
+        <li>Slider</li>
+        <li>Weather</li>
+    </ul>
 </template>
+
+<script>
+import { RouterLink } from 'vue-router'
+import ROUTES_CONFIG from '@/data/routesConfig.json'
+
+export default {
+    name: 'ComponentsView',
+    components: { RouterLink },
+    data() {
+        return {
+            slugs: ROUTES_CONFIG.routes
+        }
+    },
+    computed: {
+        componentLevelSlugs() {
+            return this.slugs.filter(slug => slug.root === 'components')
+        }
+    }
+}
+</script>
 
 <style scoped>
 

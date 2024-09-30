@@ -3,12 +3,13 @@
 @import 'nav.css';
 @import 'breadcrumb.css';
 @import 'footer.css';
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
 
 * {
   box-sizing: border-box;
 }
 body {
-  font-family: monospace, Arial, sans-serif;
+  font-family: 'Fira Mono', monospace;
   font-size: 14px;
   letter-spacing: 1.25px;
   line-height: 1.5;
@@ -75,7 +76,4 @@ section {
 }
 section div {
   margin: 1rem 0;
-}
-p {
-  margin: 1rem;
 }

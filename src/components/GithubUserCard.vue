@@ -1,9 +1,10 @@
 <template>
   <div class="ui card">
-    <h3 class="ui header">GitHub Profile: {{ profile.login }}</h3>
+    <h3 class="ui header">
+      <v-icon name="bi-github" title="Github" scale="1.5"/>GitHub Profile: {{ profile.login }}</h3>
     <div class="image">
     <a class="header" :href="profile.html_url">
-      <img :src="profile.avatar_url" :alt="profilePicAlt"></a>
+      <img :src="profile.avatar_url" :alt="profilePicAlt" height="250" width="250"></a>
     </div>
     <div class="content">
       <a class="header" :href="profile.html_url"> {{ profile.name }}</a>
@@ -19,11 +20,17 @@
     </div>
   </div>
 </template>
+
 <script>
 import axios from 'axios'
+import { addIcons, OhVueIcon } from 'oh-vue-icons'
+import { BiGithub } from 'oh-vue-icons/icons'
+
+addIcons(BiGithub)
 
 export default {
   name: 'GithubUserCard',
+  components: { "v-icon": OhVueIcon },
   props: {
     username: {
       type: String,
@@ -43,21 +50,19 @@ export default {
   },
   async created() {
     const username = this.username;
-    const response = await axios.get(`https://api.github.com/users/${username}`)
-      .then(response => {
-        // console.log(response.data);
-        return response.data
-      }).catch(error => {
-        console.error(error)
-      });
-    this.profile = response;
+      this.profile = await axios.get(`https://api.github.com/users/${username}`)
+        .then(response => {
+            // console.log(response.data);
+            return response.data
+        }).catch(error => {
+            console.error(error)
+        });
     this.profilePicAlt = this.getProfilePicAltText();
   }
 }
 </script>
 <style scoped>
 .about .card img {
-  max-width: 230px;
   width: 100%;
   min-width: 200px;
 }
