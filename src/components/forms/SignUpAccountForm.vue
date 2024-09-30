@@ -1,4 +1,7 @@
 <template>
+  <notification-message msgType="success" header="Subscribed!">
+    <p>Thank you for subscribing to our newsletter.</p>
+  </notification-message>
   <section>
     <form @submit.prevent="formSubmit">
       <label for="email">Email</label>
@@ -77,9 +80,11 @@
 </template>
 
 <script>
+import NotificationMessage from '@/components/notifications/notificationMessage.vue'
+
 export default {
   name: 'SignUp',
-  components: {  },
+  components: { NotificationMessage },
   data() {
     return {
       email: '',

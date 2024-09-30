@@ -17,7 +17,3 @@ import MainHeaderNav from '@/components/MainHeaderNav.vue'
 
   </header>
 </template>
-
-<style scoped>
-
-</style>
