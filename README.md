@@ -1,10 +1,6 @@
 # portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This is my personal portfolio website. It is built with [Vite](https://vitejs.dev/), and [Vue 3](https://v3.vuejs.org/).
 
 ## Customize configuration
 

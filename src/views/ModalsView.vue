@@ -3,15 +3,24 @@
   <button @click="toggleSubscribeModal">{{ modalBtnText }}</button>
 
   <teleport to=".modals">
-    <SlotTemplateModal :slotModalHeading="slotModalHeading" :showSlotModal="showSlotModal" :theme="theme" @closeSlotModal="toggleSlotModal">
+    <SlotTemplateModal :slotModalHeading="slotModalHeading"
+                       :showSlotModal="showSlotModal"
+                       :theme="theme"
+                       @closeSlotModal="toggleSlotModal">
       <template v-slot:contactInfo>
         <a href="#" class="btn">Hire Me</a>
         <a href="#" class="btn">Interview Me</a>
       </template>
     </SlotTemplateModal>
   </teleport>
+
   <teleport to=".modals">
-    <Modal :heading="modalHeading" :inputLabel="inputLabel" :btnText="btnText" :showModal="showModal" :theme="theme" @closeModal="toggleSubscribeModal"/>
+    <Modal :heading="modalHeading"
+           :inputLabel="inputLabel"
+           :btnText="btnText"
+           :showModal="showModal"
+           :theme="theme"
+           @closeModal="toggleSubscribeModal"/>
   </teleport>
 </template>
 
@@ -20,7 +29,7 @@ import SlotTemplateModal from '@/components/modals/SlotTemplateModal.vue'
 import Modal from '@/components/modals/Modal.vue'
 
 export default {
-  name: 'Modals',
+  name: 'ModalsView',
   components: {Modal, SlotTemplateModal },
   data() {
     return {
