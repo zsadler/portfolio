@@ -19,6 +19,7 @@ coverage
 
 # Editor directories and files
 .vscode/*
+!.vscode/extensions.json
 .idea
 *.suo
 *.ntvs*
@@ -27,7 +28,7 @@ coverage
 *.sw?
 
 *.tsbuildinfo
-.eslintrc.cjs
-.prettierrc.json
-.vite/*
-!/public/*.JPG
+
+.env
+.env.*
+!.env.example
