@@ -23,9 +23,5 @@ declare module 'vue-router/auto-routes' {
     '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
     '/components/': RouteRecordInfo<'/components/', '/components', Record<never, never>, Record<never, never>>,
     '/components/[id]': RouteRecordInfo<'/components/[id]', '/components/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
-    '/components/forms/': RouteRecordInfo<'/components/forms/', '/components/forms', Record<never, never>, Record<never, never>>,
-    '/components/forms/[id]': RouteRecordInfo<'/components/forms/[id]', '/components/forms/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
-    '/components/modals/': RouteRecordInfo<'/components/modals/', '/components/modals', Record<never, never>, Record<never, never>>,
-    '/components/modals/[id]': RouteRecordInfo<'/components/modals/[id]', '/components/modals/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
   }
 }

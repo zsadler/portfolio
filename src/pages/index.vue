@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+    <h1>Welcome Home</h1>
+    <RouterLink :to="{ name: '/components/[id]', params: {'id': 1} }">Go to Components</RouterLink>
 </template>
+
+<style scoped>
+
+</style>

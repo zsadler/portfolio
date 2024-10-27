@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<h1>Projects</h1>
+<h1>Components</h1>
 </template>
 
 <style scoped>
